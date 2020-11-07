@@ -8,8 +8,7 @@ import { makeStyles, createStyles } from '@material-ui/styles';
 import { LinkedIn, GitHub, Description } from '@material-ui/icons';
 
 const ContactWrap = styled.div`
-  width: 960px;
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
 `;
 
@@ -54,8 +53,8 @@ export const Contact: React.FC = () => {
 
   return (
     <ContactWrap>
-      {links.map((item) => (
-        <Typography className={classes.header} variant="h4">
+      {links.map((item: any) => (
+        <Typography key={item.name} className={classes.header} variant="h4">
           <span className={classes.icon}>{item.icon}</span>
           <a href={item.url} className={classes.link}>
             {item.name}

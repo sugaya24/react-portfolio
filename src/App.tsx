@@ -21,13 +21,8 @@ const AppContainer = styled.div`
 const Container = styled.div`
   width: 960px;
   margin: 0 auto;
-
   @media (max-width: ${breakpoint.md}) {
-    width: 500px;
-  }
-
-  @media (max-width: ${breakpoint.sm}) {
-    width: 320px;
+    width: 80%;
   }
 `;
 
@@ -78,8 +73,6 @@ const theme = createMuiTheme({
 });
 
 export default function App() {
-  // const navMenu: Array<string> = ['works', 'about', 'contact'];
-
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>

@@ -32,9 +32,11 @@ const TypographyWrap = styled(Typography)`
   margin-bottom: 30px;
 `;
 
-const Icon = styled.img`
+const Icon = styled.div`
+  background-image: url('img/main_icon.jpg');
   width: 200px;
   height: 200px;
+  margin: 0 auto;
   background-position: center;
   background-size: cover;
   border: 7px solid ${color.PRIMARY_ELEMENT};
@@ -64,11 +66,11 @@ export const About: React.FC = () => {
   return (
     <AboutWrap>
       <Grid container spacing={2}>
-        <Grid item md={4}>
-          <Icon src="img/main_icon.jpg"></Icon>
+        <Grid item xs={12} md={4}>
+          <Icon></Icon>
         </Grid>
 
-        <Grid item md={8}>
+        <Grid item xs={12} md={8}>
           <TypographyWrap variant="h4" gutterBottom={true}>
             About me
           </TypographyWrap>
