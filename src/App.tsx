@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme, Typography } from '@material-ui/core';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 import { Works } from './components/Works';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
@@ -41,11 +41,11 @@ const JobTitle = styled.h2`
 `;
 
 const Navigation = styled.div``;
-const NavLink = styled(Link)`
+const StyledNavLink = styled(NavLink)`
+  color: ${color.SECONDARY_TEXT};
   margin-right: 24px;
   text-decoration: none;
   font-size: 22px;
-  color: ${color.PRIMARY_TEXT};
   &:last-child {
     margin-right: 0;
   }
@@ -89,15 +89,34 @@ export default function App() {
               </div>
               <Navigation>
                 <Typography variant="subtitle1">
-                  <NavLink to="/" className="item">
+                  <StyledNavLink
+                    exact
+                    to="/"
+                    className="item"
+                    activeStyle={{
+                      color: `${color.PRIMARY_TEXT}`,
+                    }}
+                  >
                     Works
-                  </NavLink>
-                  <NavLink to="/about" className="item">
+                  </StyledNavLink>
+                  <StyledNavLink
+                    to="/about"
+                    className="item"
+                    activeStyle={{
+                      color: `${color.PRIMARY_TEXT}`,
+                    }}
+                  >
                     About
-                  </NavLink>
-                  <NavLink to="/contact" className="item">
+                  </StyledNavLink>
+                  <StyledNavLink
+                    to="/contact"
+                    className="item"
+                    activeStyle={{
+                      color: `${color.PRIMARY_TEXT}`,
+                    }}
+                  >
                     Contact
-                  </NavLink>
+                  </StyledNavLink>
                 </Typography>
               </Navigation>
             </Header>
