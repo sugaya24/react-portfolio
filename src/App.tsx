@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 import { Works } from './components/Works';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
+import { Navigation } from './components/Navigation';
 
 import styled from 'styled-components';
 import color from './const/color';
@@ -40,21 +41,6 @@ const JobTitle = styled.h2`
   color: ${color.SECONDARY_TEXT};
 `;
 
-const Navigation = styled.div``;
-const StyledNavLink = styled(NavLink)`
-  color: ${color.SECONDARY_TEXT};
-  margin-right: 24px;
-  text-decoration: none;
-  font-size: 22px;
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @media (max-width: ${breakpoint.md}) {
-    display: none;
-  }
-`;
-
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
@@ -87,38 +73,7 @@ export default function App() {
                   <JobTitle>Front-end Developer</JobTitle>
                 </Typography>
               </div>
-              <Navigation>
-                <Typography variant="subtitle1">
-                  <StyledNavLink
-                    exact
-                    to="/"
-                    className="item"
-                    activeStyle={{
-                      color: `${color.PRIMARY_TEXT}`,
-                    }}
-                  >
-                    Works
-                  </StyledNavLink>
-                  <StyledNavLink
-                    to="/about"
-                    className="item"
-                    activeStyle={{
-                      color: `${color.PRIMARY_TEXT}`,
-                    }}
-                  >
-                    About
-                  </StyledNavLink>
-                  <StyledNavLink
-                    to="/contact"
-                    className="item"
-                    activeStyle={{
-                      color: `${color.PRIMARY_TEXT}`,
-                    }}
-                  >
-                    Contact
-                  </StyledNavLink>
-                </Typography>
-              </Navigation>
+              <Navigation />
             </Header>
           </Container>
           <Switch>
