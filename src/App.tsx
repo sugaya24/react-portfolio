@@ -59,6 +59,8 @@ const theme = createMuiTheme({
 });
 
 export default function App() {
+  document.title = 'Yuki Sugaya - Portfolio';
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
