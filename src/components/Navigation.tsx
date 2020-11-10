@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Typography,
   Drawer,
@@ -16,8 +16,6 @@ import { Menu } from '@material-ui/icons';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
-import { DrawerContext } from '../context/drawerContext';
 
 import color from '../const/color';
 
