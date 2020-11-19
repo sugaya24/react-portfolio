@@ -10,9 +10,10 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemIcon,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { Menu } from '@material-ui/icons';
+import { AllInbox, Face, Menu, Work } from '@material-ui/icons';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -121,6 +122,7 @@ export const Navigation = () => {
         className={classes.drawer}
         classes={{ paper: classes.drawerPaper }}
         open={isDrawerOpen}
+        onClose={toggleDrawer}
         anchor="right"
         variant="temporary"
       >
@@ -131,34 +133,45 @@ export const Navigation = () => {
         </div>
         <Divider />
         <List>
-          <ListItem button>
-            <NavLink
-              className={classes.drawerNavLink}
-              exact
-              to="/"
-              onClick={toggleDrawer}
-            >
+          <NavLink
+            className={classes.drawerNavLink}
+            exact
+            to="/"
+            onClick={toggleDrawer}
+          >
+            <ListItem button>
+              <ListItemIcon>
+                <Work />
+              </ListItemIcon>
               <ListItemText primary="Works" />
-            </NavLink>
-          </ListItem>
-          <ListItem button>
-            <NavLink
-              className={classes.drawerNavLink}
-              to="/about"
-              onClick={toggleDrawer}
-            >
+            </ListItem>
+          </NavLink>
+
+          <NavLink
+            className={classes.drawerNavLink}
+            to="/about"
+            onClick={toggleDrawer}
+          >
+            <ListItem button>
+              <ListItemIcon>
+                <Face />
+              </ListItemIcon>
               <ListItemText primary="About" />
-            </NavLink>
-          </ListItem>
-          <ListItem button>
-            <NavLink
-              className={classes.drawerNavLink}
-              to="/contact"
-              onClick={toggleDrawer}
-            >
+            </ListItem>
+          </NavLink>
+
+          <NavLink
+            className={classes.drawerNavLink}
+            to="/contact"
+            onClick={toggleDrawer}
+          >
+            <ListItem button>
+              <ListItemIcon>
+                <AllInbox />
+              </ListItemIcon>
               <ListItemText primary="Contact" />
-            </NavLink>
-          </ListItem>
+            </ListItem>
+          </NavLink>
         </List>
       </Drawer>
     </div>
